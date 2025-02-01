@@ -1,0 +1,22 @@
+# FastAPI (Backend)
+fastapi
+uvicorn
+
+# AI/ML - NLP, Text Processing, and Vector Search
+torch
+transformers
+sentence-transformers
+scikit-learn
+numpy
+pandas
+
+# AI-Powered Matching & Search
+pinecone-client
+
+# Web Scraping for Disaster News
+beautifulsoup4
+requests
+
+# Database (If Using PostgreSQL)
+sqlalchemy
+psycopg2-binary
