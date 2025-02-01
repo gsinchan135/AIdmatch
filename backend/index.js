@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = 3001;
-app.use(cors());
+app.use(cors({origin: "*"}));
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,4 +39,24 @@ app.post('/donors', (req, res) => {
       res.json({ message: 'Donor data saved successfully!' });
     });
   });
+
 });
+
+app.get('/donors', (req, res) => {
+    fs.readFile(donorsFilePath, 'utf8', (readErr, data) => {
+      if (readErr) return res.status(500).json({ error: 'Error reading donor file' });
+      
+      let donors = [];
+      try {
+        donors = JSON.parse(data);
+      } catch (parseErr) {
+        return res.status(500).json({ error: 'Error parsing donor file' });
+      }
+  
+      res.json(donors);
+    });
+  });
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });

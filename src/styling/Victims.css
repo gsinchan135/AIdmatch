@@ -1,0 +1,39 @@
+.victims-container {
+    padding: 20px;
+  }
+  
+  .donor-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .donor-table th, .donor-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .donor-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination button {
+    margin: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pagination button:hover {
+    background-color: #ddd;
+  }
+  
