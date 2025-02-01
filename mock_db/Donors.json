@@ -1,0 +1,27 @@
+[
+  {
+    "name": "amine",
+    "location": "here",
+    "phoneNumber": "514",
+    "capacity": "6"
+  },
+  {
+    "name": "reis",
+    "location": "321894",
+    "phoneNumber": "4214",
+    "capacity": "213"
+  },
+  {
+    "name": "dsadsa",
+    "location": "sda",
+    "phoneNumber": "sdasd",
+    "capacity": "23"
+  },
+  {
+    "name": "dsadsa",
+    "location": "sda",
+    "phoneNumber": "sdasd",
+    "capacity": "23",
+    "description": "greetings"
+  }
+]

@@ -69,6 +69,14 @@
     align-items:end;
 }
 
+#description-input {
+    height: 120px;
+    width: 360px;
+    font-size: 16px;
+    resize: none;
+  }
+  
+
 #password-checklist{
     text-align: left;
     list-style-type: none;
