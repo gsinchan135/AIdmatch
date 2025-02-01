@@ -1,0 +1,72 @@
+[
+  {
+    "name": "John Doe",
+    "location": "40.7128,-74.0060",
+    "phoneNumber": "123-456-7890",
+    "capacity": "4",
+    "description": "Food and clothing donations available."
+  },
+  {
+    "name": "Jane Smith",
+    "location": "34.0522,-118.2437",
+    "phoneNumber": "987-654-3210",
+    "capacity": "6",
+    "description": "Can provide shelter for up to 6 people."
+  },
+  {
+    "name": "Michael Johnson",
+    "location": "41.8781,-87.6298",
+    "phoneNumber": "555-123-4567",
+    "capacity": "3",
+    "description": "Offering meals and hygiene kits."
+  },
+  {
+    "name": "Emily Davis",
+    "location": "29.7604,-95.3698",
+    "phoneNumber": "444-987-6543",
+    "capacity": "5",
+    "description": "Temporary housing and counseling services."
+  },
+  {
+    "name": "David Wilson",
+    "location": "33.4484,-112.0740",
+    "phoneNumber": "222-555-7890",
+    "capacity": "2",
+    "description": "Providing transportation for victims."
+  },
+  {
+    "name": "Sophia Martinez",
+    "location": "39.7392,-104.9903",
+    "phoneNumber": "333-777-8888",
+    "capacity": "6",
+    "description": "Shelter and emergency aid supplies."
+  },
+  {
+    "name": "William Brown",
+    "location": "47.6062,-122.3321",
+    "phoneNumber": "111-222-3333",
+    "capacity": "4",
+    "description": "Offering food packages and blankets."
+  },
+  {
+    "name": "Olivia Taylor",
+    "location": "32.7767,-96.7970",
+    "phoneNumber": "666-888-9999",
+    "capacity": "3",
+    "description": "Basic medical aid and temporary accommodation."
+  },
+  {
+    "name": "James Anderson",
+    "location": "37.7749,-122.4194",
+    "phoneNumber": "999-666-5555",
+    "capacity": "6",
+    "description": "Emergency aid and transport assistance."
+  },
+  {
+    "name": "Isabella Thomas",
+    "location": "25.7617,-80.1918",
+    "phoneNumber": "555-333-1111",
+    "capacity": "5",
+    "description": "Safe shelter and food supply for victims."
+  }
+]
