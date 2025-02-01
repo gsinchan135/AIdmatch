@@ -1,0 +1,111 @@
+/*CSS for Signup.tsx and Login.tsx*/
+
+.signup-form{
+    width:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-top: 5%;
+    padding: 2%;
+    color:black;
+    background-color: var(--color-form-background);
+}
+
+.form-go-back{
+    font-size: 1.5em;
+    width: fit-content;
+    justify-content: center;
+    align-self: flex-end;
+    color: black;
+    text-decoration: none;
+    padding: 0 3%;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+}
+
+.form-go-back:hover{
+    cursor: pointer;
+}
+
+
+.form-group{
+    padding-bottom: 5%;
+    text-align: left;
+}
+
+
+.input-wrapper{
+    display: flex;
+    justify-items:center;
+    align-items: center;
+    background-color: var(--color-form-wrapper);
+    border: 1px solid var(--color-unfocus);
+    padding: 5px 10px;
+
+}
+
+.input-wrapper:focus-within{
+    border: 1px solid var(--color-focus);
+}
+
+.form-input{
+    background-color: var(--color-background);
+    border: none;
+    font-size: 1em;
+
+    width: 100%;
+    padding: 5%;
+    color: black;
+}
+.form-input:focus{
+    border: none;
+    outline: none;
+}
+
+.form-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+}
+
+#password-checklist{
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+#confirm-signup, #confirm-login{
+    font-size: large;
+    width: fit-content;
+    padding: 2%;
+    background-color: var(--color-button);
+    border: none;
+    font-family: 'Roboto';
+}
+
+#confirm-signup:hover, #confirm-login:hover{
+    cursor: pointer;
+    background-color: var(--color-highlight-focus);
+}
+
+.form-prompt{
+    font-size: small;
+    color: var(--color-highlight);
+}
+
+.form-prompt:hover{
+    color:var(--color-highlight-focus)
+}
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--color-background) inset !important;
+  }
+  
+  input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+  }
+  
