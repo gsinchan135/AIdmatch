@@ -1,0 +1,25 @@
+.HeroImage {
+    position: relative;
+    width: 100%; /* Span the width of the parent */
+    max-height: 300px; /* Limit the maximum height */
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .HeroImage-img {
+    width: 100%; /* Make the image span the width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the space */
+  }
+  
+  .HeroImage-text {
+    position: absolute; /* Position text over the image */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white; 
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1rem; /* Add some padding to the text */
+    border-radius: 0.5rem; /* Optional: rounded corners for the background */
+    font-size: 1.5rem; /* Text size */
+    text-align: center; /* Center the text */
+  }
