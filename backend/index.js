@@ -13,6 +13,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const donorsFilePath = path.join(__dirname, '../mock_db', 'Donors.json');
 
+const options = {
+    provider: 'openstreetmap', 
+    userAgent: 'geoapiApp/1.0',
+  };
+
+  //const geocoder = NodeGeocoder(options);
+
 app.post('/donors', (req, res) => {
   const donor = req.body;
   
@@ -56,6 +63,7 @@ app.get('/donors', (req, res) => {
       res.json(donors);
     });
   });
+
 
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
