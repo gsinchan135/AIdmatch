@@ -3,7 +3,7 @@ from huggingface_hub import InferenceClient
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-from helper import compute_composite_text, category_match_bonus, extract_number_from_text
+from helper import compute_composite_text, category_match_bonus, extract_number_from_text, calculate_distance
 
 # Load the pre-trained Sentence Transformer model for embeddings.
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -49,6 +49,40 @@ def score_donor(victim_embedding, victim_text, donor, donor_embedding=None):
     
     total_score = similarity + bonus + capacity_score
     return total_score, donor_embedding
+
+# Add to helper.py
+def score_donor_with_location(victim_embedding, victim_text, victim_location, donor, donor_embedding=None, max_distance=50):
+    """
+    Score a donor based on embedding similarity, intent matching, and geographic distance.
+    max_distance is in kilometers.
+    """
+    # Get the base similarity score
+    base_score, computed_embedding = score_donor(victim_embedding, victim_text, donor, donor_embedding)
+    
+    # Calculate distance
+    try:
+        distance = calculate_distance(
+            victim_location['latitude'], 
+            victim_location['longitude'],
+            donor['location']['latitude'], 
+            donor['location']['longitude']
+        )
+        
+        # If distance is greater than max_distance, significantly reduce the score
+        if distance > max_distance:
+            distance_score = 0.1  # Very low score for out-of-range donors
+        else:
+            # Normalize distance score (closer = higher score)
+            distance_score = 1 - (distance / max_distance)
+            
+        # Combine scores (adjust weights as needed)
+        final_score = (base_score * 0.7) + (distance_score * 0.3)
+        
+    except (KeyError, TypeError):
+        # If location data is missing, fall back to base score
+        final_score = base_score * 0.5  # Penalize missing location data
+        
+    return final_score, computed_embedding
 
 def llama_summarize(text, max_new_tokens=50):
     """
