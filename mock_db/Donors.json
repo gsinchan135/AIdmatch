@@ -1,72 +1,182 @@
 [
   {
-    "name": "Helping Hands Food Bank",
-    "address": "1710 Garfield Pl, Los Angeles, CA 90028",
-    "phoneNumber": "(323) 555-1234",
-    "capacity": 500,
-    "description": "Providing food assistance to those in need."
-  },
-  {
-    "name": "LA Community Shelter",
-    "address": "3855 S Western Ave, Los Angeles, CA 90062",
-    "phoneNumber": "(323) 555-5678",
-    "capacity": 300,
-    "description": "Offering shelter and meals for the homeless."
-  },
-  {
-    "name": "Hope Outreach Center",
-    "address": "3200 Motor Ave, Los Angeles, CA 90034",
-    "phoneNumber": "(310) 555-7890",
-    "capacity": 200,
-    "description": "Providing outreach programs for underprivileged families."
-  },
-  {
-    "name": "Sunshine Charity",
-    "address": "444 W 9th St, Los Angeles, CA 90015",
-    "phoneNumber": "(213) 555-2345",
+    "name": "Hope Community Center",
+    "location": "1600 Amphitheatre Parkway, Mountain View, CA 94043",
+    "phoneNumber": "(650) 253-0000",
     "capacity": 150,
-    "description": "Supporting families with essential supplies and food."
+    "description": "A local community center providing shelter and aid.",
+    "longitude": -122.084057,
+    "latitude": 37.422003
   },
   {
-    "name": "LA Food Drive",
-    "address": "1822 S Vermont Ave, Los Angeles, CA 90006",
-    "phoneNumber": "(213) 555-6789",
-    "capacity": 600,
-    "description": "Monthly food drive supporting the local community."
+    "name": "Apple Cares Initiative",
+    "location": "1 Apple Park Way, Cupertino, CA 95014",
+    "phoneNumber": "(408) 996-1010",
+    "capacity": 200,
+    "description": "A donor organization supporting local food banks.",
+    "longitude": -122.009026,
+    "latitude": 37.334722
   },
   {
-    "name": "United Care Shelter",
-    "address": "1020 S Olive St, Los Angeles, CA 90015",
-    "phoneNumber": "(213) 555-9012",
-    "capacity": 250,
-    "description": "Providing temporary housing and meals for those in need."
+    "name": "NYC Relief Shelter",
+    "location": "350 5th Ave, New York, NY 10118",
+    "phoneNumber": "(212) 736-3100",
+    "capacity": 300,
+    "description": "A shelter providing meals and housing assistance.",
+    "longitude": -73.985656,
+    "latitude": 40.748817
   },
   {
-    "name": "Angel's Helping Hands",
-    "address": "1234 N Highland Ave, Los Angeles, CA 90038",
-    "phoneNumber": "(323) 555-3456",
+    "name": "Los Angeles Food Bank",
+    "location": "1734 E 41st St, Los Angeles, CA 90058",
+    "phoneNumber": "(323) 234-3030",
+    "capacity": 500,
+    "description": "A food bank distributing meals to those in need.",
+    "longitude": -118.241687,
+    "latitude": 34.008801
+  },
+  {
+    "name": "Chicago Community Services",
+    "location": "233 S Wacker Dr, Chicago, IL 60606",
+    "phoneNumber": "(312) 875-0066",
     "capacity": 400,
-    "description": "Assisting individuals with shelter and daily necessities."
+    "description": "Community-driven initiative providing essential supplies.",
+    "longitude": -87.635915,
+    "latitude": 41.878876
   },
   {
-    "name": "Goodwill Assistance Center",
-    "address": "600 N Vermont Ave, Los Angeles, CA 90004",
-    "phoneNumber": "(213) 555-4567",
+    "name": "Houston Outreach Program",
+    "location": "901 Bagby St, Houston, TX 77002",
+    "phoneNumber": "(713) 837-0311",
+    "capacity": 250,
+    "description": "Offering housing and emergency assistance to families.",
+    "longitude": -95.369804,
+    "latitude": 29.760427
+  },
+  {
+    "name": "Miami Humanitarian Aid",
+    "location": "100 Chopin Plaza, Miami, FL 33131",
+    "phoneNumber": "(305) 358-1234",
+    "capacity": 220,
+    "description": "Providing relief support for underprivileged families.",
+    "longitude": -80.188789,
+    "latitude": 25.774172
+  },
+  {
+    "name": "Seattle Shelter Hub",
+    "location": "600 4th Ave, Seattle, WA 98104",
+    "phoneNumber": "(206) 684-2489",
+    "capacity": 180,
+    "description": "A shelter offering support and rehabilitation programs.",
+    "longitude": -122.329437,
+    "latitude": 47.603832
+  },
+  {
+    "name": "Denver Assistance Center",
+    "location": "1437 Bannock St, Denver, CO 80202",
+    "phoneNumber": "(720) 865-9000",
     "capacity": 350,
-    "description": "Helping families with food, clothing, and shelter."
+    "description": "Support services for those facing financial hardship.",
+    "longitude": -104.990303,
+    "latitude": 39.739235
   },
   {
-    "name": "Starlight Refuge",
-    "address": "245 S San Pedro St, Los Angeles, CA 90012",
-    "phoneNumber": "(213) 555-6781",
+    "name": "Boston Food Assistance",
+    "location": "1 City Hall Square, Boston, MA 02201",
+    "phoneNumber": "(617) 635-4000",
     "capacity": 275,
-    "description": "Emergency shelter and food assistance for those in crisis."
+    "description": "Distributing food and essential resources to the needy.",
+    "longitude": -71.057083,
+    "latitude": 42.360253
   },
   {
-    "name": "Bridge of Hope",
-    "address": "820 S Broadway, Los Angeles, CA 90014",
-    "phoneNumber": "(213) 555-7892",
-    "capacity": 320,
-    "description": "Providing hope and assistance to struggling individuals."
+    "name": "Phoenix Family Support",
+    "location": "200 W Washington St, Phoenix, AZ 85003",
+    "phoneNumber": "(602) 262-6011",
+    "capacity": 240,
+    "description": "Helping families in crisis with emergency food and shelter.",
+    "longitude": -112.077406,
+    "latitude": 33.448376
+  },
+  {
+    "name": "Philadelphia Outreach Network",
+    "location": "1401 John F Kennedy Blvd, Philadelphia, PA 19102",
+    "phoneNumber": "(215) 686-1776",
+    "capacity": 290,
+    "description": "Aiding families in need with food and employment assistance.",
+    "longitude": -75.163789,
+    "latitude": 39.952335
+  },
+  {
+    "name": "Austin Relief Center",
+    "location": "301 W 2nd St, Austin, TX 78701",
+    "phoneNumber": "(512) 974-2000",
+    "capacity": 280,
+    "description": "A center dedicated to supporting low-income families.",
+    "longitude": -97.744116,
+    "latitude": 30.267153
+  },
+  {
+    "name": "Detroit Help Hub",
+    "location": "2 Woodward Ave, Detroit, MI 48226",
+    "phoneNumber": "(313) 224-3400",
+    "capacity": 300,
+    "description": "A city-run program assisting the homeless with shelter and food.",
+    "longitude": -83.046640,
+    "latitude": 42.331427
+  },
+  {
+    "name": "Columbus Community Aid",
+    "location": "90 W Broad St, Columbus, OH 43215",
+    "phoneNumber": "(614) 645-3111",
+    "capacity": 250,
+    "description": "Providing emergency food and shelter to those in need.",
+    "longitude": -83.003464,
+    "latitude": 39.961176
+  },
+  {
+    "name": "San Jose Support Network",
+    "location": "200 E Santa Clara St, San Jose, CA 95113",
+    "phoneNumber": "(408) 535-3500",
+    "capacity": 270,
+    "description": "A nonprofit organization providing meals and housing support.",
+    "longitude": -121.886329,
+    "latitude": 37.338208
+  },
+  {
+    "name": "Nashville Crisis Center",
+    "location": "1 Public Sq, Nashville, TN 37201",
+    "phoneNumber": "(615) 862-6000",
+    "capacity": 220,
+    "description": "Providing assistance to families and individuals in crisis.",
+    "longitude": -86.781601,
+    "latitude": 36.162664
+  },
+  {
+    "name": "Louisville Emergency Shelter",
+    "location": "527 W Jefferson St, Louisville, KY 40202",
+    "phoneNumber": "(502) 574-5000",
+    "capacity": 230,
+    "description": "Offering shelter and employment assistance.",
+    "longitude": -85.759407,
+    "latitude": 38.252665
+  },
+  {
+    "name": "Indianapolis Family Aid",
+    "location": "200 E Washington St, Indianapolis, IN 46204",
+    "phoneNumber": "(317) 327-3601",
+    "capacity": 260,
+    "description": "Supporting low-income families with food and shelter.",
+    "longitude": -86.158068,
+    "latitude": 39.768403
+  },
+  {
+    "name": "Las Vegas Community Aid",
+    "location": "495 S Main St, Las Vegas, NV 89101",
+    "phoneNumber": "(702) 229-6011",
+    "capacity": 230,
+    "description": "Offering shelter and job placement assistance.",
+    "longitude": -115.145895,
+    "latitude": 36.167255
   }
 ]
