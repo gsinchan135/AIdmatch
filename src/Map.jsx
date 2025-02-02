@@ -1,101 +1,84 @@
-import React, { useState, useEffect } from 'react';
-import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
+import React, { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+// @ts-ignore
+// @ts-ignore
+import axios from 'axios';
+import 'leaflet/dist/leaflet.css'; 
+import './styling/Donor.css'; 
 
-// Map settings
-const mapContainerStyle = {
-  width: '100%',
-  height: '600px',
-};
+// Function to generate random coordinates within a specified radius
+function generateRandomCoordinates(centerLat, centerLon, radiusKm) {
+  const radiusInDegrees = radiusKm / 111.32;
 
-const center = {
-  lat: 37.7749, // Default center (San Francisco)
-  lng: -122.4194,
-};
+  const randomLat = centerLat + (Math.random() - 0.5) * 2 * radiusInDegrees;
+  const randomLon = centerLon + (Math.random() - 0.5) * 2 * radiusInDegrees / Math.cos(centerLat * Math.PI / 180);
 
-const MapComponent = () => {
-  const [donors, setDonors] = useState([]); // State to store donor data
-  const [markers, setMarkers] = useState([]); // State to store map markers
-  const { isLoaded, loadError } = useLoadScript({
-    // @ts-ignore
-    googleMapsApiKey: process.env.MAPS_API_KEY,
-  });
+  return {
+    lat: randomLat,
+    lon: randomLon
+  };
+}
 
-  // Fetch donor data from the backend
+const LAlat = 34.0522;
+const LAlon = -118.2437;  
+
+export default function Map() {
+  const [donors, setDonors] = useState([]);
+  const [coordinates, setCoordinates] = useState([]);  // Store coordinates for each donor
+
   useEffect(() => {
-    fetch('http://localhost:5000/donors') // Replace with your backend URL
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
+    fetch('http://localhost:3001/donors')  
+      .then(response => response.json())
+      .then((data) => {
+        setDonors(data);
+
+        // Generate random coordinates for each donor
+        const randomCoordinates = data.map(() => generateRandomCoordinates(LAlat, LAlon, 50));
+        setCoordinates(randomCoordinates);
       })
-      .then((data) => setDonors(data))
-      .catch((error) => console.error('Error fetching donors:', error));
+      .catch(error => console.error("Error fetching donors:", error));
   }, []);
 
-  // Geocode donor addresses and set markers
-  useEffect(() => {
-    if (!isLoaded || donors.length === 0) return;
-
-    const geocodeDonors = async () => {
-      const newMarkers = [];
-
-      for (const donor of donors) {
-        try {
-          const response = await fetch(
-            `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-              // @ts-ignore
-              donor.address
-            )}&key=${process.env.MAPS_API_KEY}`
-          );
-          const data = await response.json();
-
-          if (data.status === 'OK' && data.results.length > 0) {
-            const location = data.results[0].geometry.location;
-            newMarkers.push({
-              // @ts-ignore
-              id: donor.name,
-              position: { lat: location.lat, lng: location.lng },
-              // @ts-ignore
-              label: donor.name,
-            });
-          } else {
-            // @ts-ignore
-            console.error(`Geocoding failed for address: ${donor.address}`);
-          }
-        } catch (error) {
-          console.error('Error geocoding address:', error);
-        }
-      }
-
-      // @ts-ignore
-      setMarkers(newMarkers);
-    };
-
-    geocodeDonors();
-  }, [donors, isLoaded]);
-
-  if (loadError) return <div>Error loading maps</div>;
-  if (!isLoaded) return <div>Loading Maps...</div>;
-
   return (
-    <GoogleMap
-      mapContainerStyle={mapContainerStyle}
-      zoom={4}
-      center={center}
-    >
-      {markers.map((marker) => (
-        <Marker
-          // @ts-ignore
-          key={marker.id}
-          // @ts-ignore
-          position={marker.position}
-          // @ts-ignore
-          label={marker.label} // Display the donor name as a label
-        />
-      ))}
-    </GoogleMap>
-  );
-};
+    <MapContainer center={[34.054, -118.24]} zoom={12} style={{ height: "500px", width: "100%" }}>
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      
+      {donors.map((donor, index) => {
+        const coord = coordinates[index];
 
-export default MapComponent;
+        if (!coord) return null; // Skip rendering if no coordinates are available
+
+        return (
+          <Marker 
+            key={index} 
+            position={[coord.lat, coord.lon]} 
+            icon={L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png' })}
+          >
+            <Popup>
+              <strong>{donor.
+            // @ts-ignore
+              name}</strong><br />
+              <strong>{donor.
+            // @ts-ignore
+            location}</strong>
+              <br />
+              <br/>
+              Phone: {donor.
+            // @ts-ignore
+              phoneNumber}<br />
+              Capacity: {donor.
+// @ts-ignore
+              capacity}
+              <br/>
+              {donor.
+            // @ts-ignore
+              description}
+              <br />
+            </Popup>
+          </Marker>
+        );
+      })}
+    </MapContainer>
+  );
+}

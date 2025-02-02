@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./styling/Donor.css";
 
+
 export default function Donor() {
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
