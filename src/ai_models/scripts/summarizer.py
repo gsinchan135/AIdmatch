@@ -6,7 +6,7 @@ from huggingface_hub import InferenceClient
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-from helper import compute_composite_text, category_match_bonus, extract_number_from_text, calculate_distance
+from ai_models.scripts.helper import compute_composite_text, category_match_bonus, extract_number_from_text, calculate_distance
 
 load_dotenv()
 

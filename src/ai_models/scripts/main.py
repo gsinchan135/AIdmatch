@@ -1,6 +1,6 @@
-from summarizer import llama_summarize, compute_embedding, score_donor_with_location 
-from intent_classifier import predict_intent
-from helper import extract_number_from_text, calculate_distance
+from ai_models.scripts.summarizer import llama_summarize, compute_embedding, score_donor_with_location 
+from ai_models.scripts.intent_classifier import predict_intent
+from ai_models.scripts.helper import extract_number_from_text, calculate_distance
 
 def get_top_donors(victim_text, victim_location, donors, top_x=3, max_distance=50):
     """

@@ -106,27 +106,13 @@ st.markdown("""
 st.sidebar.title("CrisisConnect")
 st.sidebar.markdown("Disaster Relief Platform")
 st.sidebar.markdown("Helping victims find the aid they need quickly!")
-page = st.sidebar.radio("Navigate", ["Sign In", "Home", "Victims", "Donors", "Public Services"])
+page = st.sidebar.radio("Navigate", ["Home", "Victims", "Donors", "Public Services"])
 vic_text_temp = ""
-
-# ----------------------------
-# Sign In Page
-# ----------------------------
-if page == "Sign In":
-    st.title("Sign In")
-    with st.form("login_form"):
-        user_type = st.radio("I am a:", ["Victim", "Donor"])
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
-        submitted = st.form_submit_button("Sign In")
-        if submitted:
-            # In a real app, authentication would occur here.
-            st.success(f"Welcome {username}! You signed in as a {user_type}.")
 
 # ----------------------------
 # Home Page (News and Updates)
 # ----------------------------
-elif page == "Home":
+if page == "Home":
     st.title("Latest Disaster News & Updates")
     st.markdown("Get personalized news updates based on your situation.")
     
