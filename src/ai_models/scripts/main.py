@@ -70,7 +70,22 @@ def assign_donors(victim_text, victim_location, donors, top_x=3, max_distance=50
             donor['capacity'] = current_capacity - required_people
         else:
             donor['capacity'] = 0
-    
+
+    # Compute normalized scores for the top donors
+    scores = [donor["score"] for donor in top_donors]
+    if scores:
+        min_score = min(scores)
+        max_score = max(scores)
+        range_score = max_score - min_score
+        for donor in top_donors:
+            if range_score > 0:
+                donor["normalized_score"] = (donor["score"] - min_score) / range_score
+            else:
+                donor["normalized_score"] = 1.0  # all donors have the same score
+    else:
+        for donor in top_donors:
+            donor["normalized_score"] = 0
+
     return top_donors, predicted_intent
 
 if __name__ == "__main__":
