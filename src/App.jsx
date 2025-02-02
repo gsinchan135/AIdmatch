@@ -17,7 +17,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <div id='main-content'>
       <Navbar/>
       <Router>
       <Routes>
