@@ -1,4 +1,6 @@
 import streamlit as st
+from streamlit_folium import st_folium
+import folium
 import pandas as pd
 import json
 import sys
@@ -70,6 +72,7 @@ def get_user_location():
     except Exception as e:
         return None
     return None
+
 
 # ----------------------------
 # Custom CSS for a modern look
@@ -253,3 +256,30 @@ elif page == "Donors":
 elif page == "Public Services":
     st.title("Public Services Map")
     st.markdown("This section will show nearby public services on a map. [Map integration coming soon...]")
+
+
+elif page == "Map":
+    donors = load_donors()
+    if donors:
+        m = folium.Map(location=[donors[0]['latitude'], donors[0]['longitude']], zoom_start=12)
+        
+        # Add markers for all donors
+        for donor in donors:
+            folium.Marker(
+                location=[donor['latitude'], donor['longitude']],
+                popup=f"""
+                    <b>{donor['name']}</b><br>
+                    {donor['location']}<br><br>
+                    Phone: {donor['phoneNumber']}<br>
+                    Capacity: {donor['capacity']}<br>
+                    {donor['description']}
+                """,
+                icon=folium.Icon(color='blue', icon='info-sign')
+            ).add_to(m)
+        else:
+            m = folium.Map(location=[0, 0], zoom_start=2)
+
+    # Streamlit UI
+    st.set_page_config(page_title='Map')
+    st.title("Donor Locations Map")
+    st_folium(m, width=700, height=500)

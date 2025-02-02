@@ -10,6 +10,8 @@ export default function Donor() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [capacity, setCapacity] = useState('');
   const [description, setDescription] = useState('');
+  const [longitude,setLongitude] = useState(0);
+  const [latitude, setLatitude] = useState(0);
   const [error, setError] = useState('');
 
   const nameRef = useRef(null);
@@ -30,10 +32,8 @@ export default function Donor() {
   
       const response = await axios.get(`${NOMINATIM_BASE_URL}?${params}`);
       if (response.data.length > 0) {
-        return {
-          lat: parseFloat(response.data[0].lat),
-          lon: parseFloat(response.data[0].lon),
-        };
+        setLongitude(parseFloat(response.data[0].lon));
+        setLatitude(parseFloat(response.data[0].lat))
       }
     } catch (error) {
       console.error('Error fetching coordinates:', error);
@@ -47,7 +47,8 @@ export default function Donor() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const donorData = { name, location, phoneNumber, capacity,description };
+    getCoordinates(location);
+    const donorData = { name, location, phoneNumber, capacity,description,longitude,latitude };
     try {
       const response = await fetch('http://localhost:5000/api/add_donor', {
         method: 'POST',

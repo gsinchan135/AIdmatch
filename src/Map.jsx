@@ -1,37 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import axios from 'axios';
 import 'leaflet/dist/leaflet.css';
 import './styling/Donor.css';
 
-// Function to get geolocation from address using Nominatim
-const getCoordinates = async (address) => {
-  try {
-    const NOMINATIM_BASE_URL = 'https://nominatim.openstreetmap.org/search';
-    // @ts-ignore
-    const params = new URLSearchParams({
-      q: address,
-      format: 'json',
-      limit: 1,
-    });
-
-    const response = await axios.get(`${NOMINATIM_BASE_URL}?${params}`);
-    if (response.data.length > 0) {
-      return {
-        lat: parseFloat(response.data[0].lat),
-        lon: parseFloat(response.data[0].lon),
-      };
-    }
-  } catch (error) {
-    console.error('Error fetching coordinates:', error);
-  }
-  return null;
-};
-
 export default function Map() {
   const [donors, setDonors] = useState([]);
-  const [coordinates, setCoordinates] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/api/get_top_donors', {
@@ -40,18 +14,8 @@ export default function Map() {
       body: JSON.stringify({ victim_text: "Need urgent help", victim_location: { latitude: 40.7128, longitude: -74.0060 } })
     })
       .then(response => response.json())
-      .then(async (data) => {
+      .then(data => {
         setDonors(data);
-
-        // Fetch coordinates for each donor
-        const locations = await Promise.all(
-          data.map(async (donor) => {
-            return getCoordinates(donor.address);
-          })
-        );
-
-        // @ts-ignore
-        setCoordinates(locations.filter(Boolean)); // Remove null values
       })
       .catch(error => console.error('Error fetching donors:', error));
   }, []);
@@ -61,14 +25,14 @@ export default function Map() {
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
       {donors.map((donor, index) => {
-        const coord = coordinates[index];
-
-        if (!coord) return null;
+        // @ts-ignore
+        if (!donor.latitude || !donor.longitude) return null; // Ensure coordinates exist
 
         return (
           <Marker
             key={index}
-            position={[coord.lat, coord.lon]}
+            // @ts-ignore
+            position={[donor.latitude, donor.longitude]}
             icon={L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png' })}
           >
             <Popup>
@@ -77,7 +41,7 @@ export default function Map() {
               name}</strong><br />
               <strong>{donor.
 // @ts-ignore
-              address}</strong><br /><br />
+              location}</strong><br /><br />
               Phone: {donor.
 // @ts-ignore
               phoneNumber}<br />
