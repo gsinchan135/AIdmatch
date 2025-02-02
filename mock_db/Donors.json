@@ -1,72 +1,289 @@
 [
   {
     "name": "John Doe",
-    "location": "40.7128,-74.0060",
+    "location": "New York",
     "phoneNumber": "123-456-7890",
-    "capacity": "4",
-    "description": "Food and clothing donations available."
+    "capacity": 5,
+    "description": "Available for helping victims of disaster."
   },
   {
     "name": "Jane Smith",
-    "location": "34.0522,-118.2437",
+    "location": "Los Angeles",
     "phoneNumber": "987-654-3210",
-    "capacity": "6",
-    "description": "Can provide shelter for up to 6 people."
+    "capacity": 3,
+    "description": "Can offer space for 3 people."
   },
   {
-    "name": "Michael Johnson",
-    "location": "41.8781,-87.6298",
+    "name": "Carlos Lopez",
+    "location": "Miami",
     "phoneNumber": "555-123-4567",
-    "capacity": "3",
-    "description": "Offering meals and hygiene kits."
+    "capacity": 2,
+    "description": "Emergency housing for displaced families."
   },
   {
-    "name": "Emily Davis",
-    "location": "29.7604,-95.3698",
-    "phoneNumber": "444-987-6543",
-    "capacity": "5",
-    "description": "Temporary housing and counseling services."
+    "name": "Maria Garcia",
+    "location": "Houston",
+    "phoneNumber": "321-654-9870",
+    "capacity": 4,
+    "description": "Able to provide temporary shelter."
   },
   {
-    "name": "David Wilson",
-    "location": "33.4484,-112.0740",
-    "phoneNumber": "222-555-7890",
-    "capacity": "2",
-    "description": "Providing transportation for victims."
+    "name": "Ahmed Khan",
+    "location": "Chicago",
+    "phoneNumber": "654-321-7890",
+    "capacity": 6,
+    "description": "Can offer housing for 6 people."
   },
   {
-    "name": "Sophia Martinez",
-    "location": "39.7392,-104.9903",
-    "phoneNumber": "333-777-8888",
-    "capacity": "6",
-    "description": "Shelter and emergency aid supplies."
+    "name": "Lena Brown",
+    "location": "San Francisco",
+    "phoneNumber": "234-567-8901",
+    "capacity": 5,
+    "description": "Can host 5 people in need."
   },
   {
-    "name": "William Brown",
-    "location": "47.6062,-122.3321",
-    "phoneNumber": "111-222-3333",
-    "capacity": "4",
-    "description": "Offering food packages and blankets."
+    "name": "George Clark",
+    "location": "Dallas",
+    "phoneNumber": "890-123-4567",
+    "capacity": 3,
+    "description": "Available for temporary shelter."
   },
   {
-    "name": "Olivia Taylor",
-    "location": "32.7767,-96.7970",
-    "phoneNumber": "666-888-9999",
-    "capacity": "3",
-    "description": "Basic medical aid and temporary accommodation."
+    "name": "Sarah Wilson",
+    "location": "Phoenix",
+    "phoneNumber": "432-654-7890",
+    "capacity": 2,
+    "description": "Housing available for small families."
   },
   {
-    "name": "James Anderson",
-    "location": "37.7749,-122.4194",
-    "phoneNumber": "999-666-5555",
-    "capacity": "6",
-    "description": "Emergency aid and transport assistance."
+    "name": "David Lee",
+    "location": "Philadelphia",
+    "phoneNumber": "567-890-1234",
+    "capacity": 4,
+    "description": "Providing space for up to 4 people."
   },
   {
-    "name": "Isabella Thomas",
-    "location": "25.7617,-80.1918",
-    "phoneNumber": "555-333-1111",
-    "capacity": "5",
-    "description": "Safe shelter and food supply for victims."
+    "name": "Emma Taylor",
+    "location": "Seattle",
+    "phoneNumber": "678-901-2345",
+    "capacity": 3,
+    "description": "Helping with temporary accommodation."
+  },
+  {
+    "name": "Sophia Moore",
+    "location": "Boston",
+    "phoneNumber": "789-012-3456",
+    "capacity": 5,
+    "description": "Offering space for 5 individuals."
+  },
+  {
+    "name": "James White",
+    "location": "Atlanta",
+    "phoneNumber": "890-123-6789",
+    "capacity": 4,
+    "description": "Can house up to 4 people."
+  },
+  {
+    "name": "Olivia Martinez",
+    "location": "Denver",
+    "phoneNumber": "234-567-9876",
+    "capacity": 6,
+    "description": "Providing accommodation for 6 individuals."
+  },
+  {
+    "name": "Mason Scott",
+    "location": "Orlando",
+    "phoneNumber": "345-678-9012",
+    "capacity": 2,
+    "description": "Housing available for 2 people."
+  },
+  {
+    "name": "Isabella Davis",
+    "location": "Portland",
+    "phoneNumber": "456-789-0123",
+    "capacity": 3,
+    "description": "Offering space for victims in need."
+  },
+  {
+    "name": "Benjamin Harris",
+    "location": "Miami",
+    "phoneNumber": "567-890-1234",
+    "capacity": 5,
+    "description": "Can house up to 5 people."
+  },
+  {
+    "name": "Lucas Nelson",
+    "location": "Chicago",
+    "phoneNumber": "678-901-2345",
+    "capacity": 4,
+    "description": "Available to house victims temporarily."
+  },
+  {
+    "name": "Evelyn Robinson",
+    "location": "Los Angeles",
+    "phoneNumber": "789-012-3456",
+    "capacity": 2,
+    "description": "Small space for 2 people available."
+  },
+  {
+    "name": "William Harris",
+    "location": "New York",
+    "phoneNumber": "890-123-4567",
+    "capacity": 6,
+    "description": "Can provide housing for 6 people."
+  },
+  {
+    "name": "Harper Walker",
+    "location": "Dallas",
+    "phoneNumber": "234-567-8901",
+    "capacity": 3,
+    "description": "Temporary shelter available."
+  },
+  {
+    "name": "Ella Hall",
+    "location": "Phoenix",
+    "phoneNumber": "345-678-9012",
+    "capacity": 4,
+    "description": "Can accommodate up to 4 people."
+  },
+  {
+    "name": "Aiden Young",
+    "location": "San Francisco",
+    "phoneNumber": "456-789-0123",
+    "capacity": 2,
+    "description": "Temporary housing for small families."
+  },
+  {
+    "name": "Madison Allen",
+    "location": "Houston",
+    "phoneNumber": "567-890-1234",
+    "capacity": 5,
+    "description": "Housing available for 5 people."
+  },
+  {
+    "name": "Chloe Wright",
+    "location": "Seattle",
+    "phoneNumber": "678-901-2345",
+    "capacity": 4,
+    "description": "Providing shelter for 4 people."
+  },
+  {
+    "name": "Zoe Adams",
+    "location": "Boston",
+    "phoneNumber": "789-012-3456",
+    "capacity": 6,
+    "description": "Emergency housing for up to 6 people."
+  },
+  {
+    "name": "Jackson Carter",
+    "location": "Chicago",
+    "phoneNumber": "890-123-6789",
+    "capacity": 3,
+    "description": "Can provide space for 3 people."
+  },
+  {
+    "name": "Nora Mitchell",
+    "location": "Atlanta",
+    "phoneNumber": "234-567-8901",
+    "capacity": 5,
+    "description": "Offering temporary shelter for 5 people."
+  },
+  {
+    "name": "Liam Perez",
+    "location": "Portland",
+    "phoneNumber": "345-678-9012",
+    "capacity": 6,
+    "description": "Temporary accommodation for 6 individuals."
+  },
+  {
+    "name": "Gabriel Turner",
+    "location": "New York",
+    "phoneNumber": "456-789-0123",
+    "capacity": 2,
+    "description": "Emergency housing for 2 people."
+  },
+  {
+    "name": "Amelia Walker",
+    "location": "Miami",
+    "phoneNumber": "567-890-1234",
+    "capacity": 4,
+    "description": "Temporary shelter for 4 people."
+  },
+  {
+    "name": "Owen Thomas",
+    "location": "Dallas",
+    "phoneNumber": "678-901-2345",
+    "capacity": 3,
+    "description": "Can host 3 people."
+  },
+  {
+    "name": "Lily Johnson",
+    "location": "Phoenix",
+    "phoneNumber": "789-012-3456",
+    "capacity": 6,
+    "description": "Space for up to 6 individuals."
+  },
+  {
+    "name": "Ella Garcia",
+    "location": "Seattle",
+    "phoneNumber": "890-123-6789",
+    "capacity": 2,
+    "description": "Small space available for 2 people."
+  },
+  {
+    "name": "Jacob White",
+    "location": "San Francisco",
+    "phoneNumber": "234-567-8901",
+    "capacity": 4,
+    "description": "Temporary shelter for up to 4 people."
+  },
+  {
+    "name": "Maya Evans",
+    "location": "Los Angeles",
+    "phoneNumber": "345-678-9012",
+    "capacity": 5,
+    "description": "Space available for up to 5 people."
+  },
+  {
+    "name": "Isaac King",
+    "location": "Houston",
+    "phoneNumber": "456-789-0123",
+    "capacity": 3,
+    "description": "Providing space for temporary shelter."
+  },
+  {
+    "name": "Victoria Harris",
+    "location": "Portland",
+    "phoneNumber": "567-890-1234",
+    "capacity": 6,
+    "description": "Emergency accommodation for 6 people."
+  },
+  {
+    "name": "Michaela Clark",
+    "location": "Chicago",
+    "phoneNumber": "678-901-2345",
+    "capacity": 4,
+    "description": "Temporary housing for 4 people."
+  },
+  {
+    "name": "Samuel Lee",
+    "location": "New York",
+    "phoneNumber": "789-012-3456",
+    "capacity": 5,
+    "description": "Shelter available for 5 people."
+  },
+  {
+    "name": "Harper Lewis",
+    "location": "San Francisco",
+    "phoneNumber": "890-123-6789",
+    "capacity": 2,
+    "description": "Small room for 2 people."
+  },
+  {
+    "name": "Benjamin Scott",
+    "location": "Dallas",
+    "phoneNumber": "234-567-8901",
+    "capacity": 4,
+    "description": "Can provide shelter for up to 4 people."
   }
 ]
