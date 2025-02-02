@@ -2,7 +2,6 @@ from summarizer import llama_summarize, compute_embedding, score_donor_with_loca
 from intent_classifier import predict_intent
 from helper import extract_number_from_text, calculate_distance
 
-# In main.py
 def get_top_donors(victim_text, victim_location, donors, top_x=3, max_distance=50):
     """
     Compute the matching score for each donor, considering location proximity.

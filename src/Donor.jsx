@@ -49,7 +49,7 @@ export default function Donor() {
     e.preventDefault();
     const donorData = { name, location, phoneNumber, capacity,description };
     try {
-      const response = await fetch('http://localhost:3001/donors', {
+      const response = await fetch('http://localhost:5000/api/add_donor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(donorData)

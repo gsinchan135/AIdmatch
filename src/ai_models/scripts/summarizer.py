@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+import os
+
 from sentence_transformers import SentenceTransformer
 from huggingface_hub import InferenceClient
 
@@ -5,11 +8,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from helper import compute_composite_text, category_match_bonus, extract_number_from_text, calculate_distance
 
+load_dotenv()
+
+# Access your API key
+HUGGING_FACE_API = os.getenv('HUGGING_FACE_API')
+
 # Load the pre-trained Sentence Transformer model for embeddings.
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # Initialize the LLaMA-based summarization client via Hugging Face Inference API.
-client = InferenceClient("meta-llama/Meta-Llama-3-8B-Instruct", token="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")
+client = InferenceClient("meta-llama/Meta-Llama-3-8B-Instruct", token=HUGGING_FACE_API)
 
 def compute_embedding(text):
     """
