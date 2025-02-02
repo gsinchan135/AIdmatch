@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "donor_type": "Individual",
+    "donation_category": "Food",
+    "capacity": 5,
+    "location": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
+    "city": "California",
+    "description": "I have enough food for 5 people that can last one week. Contains non perishables, granola bars and fruits. "
+  },
+  {
+    "id": 2,
+    "donor_type": "Individual",
+    "donation_category": "Shelter",
+    "capacity": 3,
+    "location": {
+      "latitude": 36.7014631,
+      "longitude": -118.755997
+    },
+    "city": "California",
+    "description": "I can host 3 people in my house for two weeks until you find a new place to live. I am located in Los Angelos"
+  },
+  {
+    "id": 3,
+    "name": "Mike Smith",
+    "donor_type": "Individual",
+    "donation_category": "Food",
+    "capacity": 3,
+    "location": {
+      "latitude": 36.7014631,
+      "longitude": -118.755997
+    },
+    "city": "California",
+    "description": "I can host 3 people in my house for two weeks until you find a new place to live. I am located in Los Angelos"
+  },
+  {
+    "id": 5,
+    "name": "Local Government",
+    "donor_type": "Government",
+    "donation_category": "Food",
+    "capacity": 23,
+    "location": {
+      "latitude": 36.7014631,
+      "longitude": -118.755997
+    },
+    "city": "California",
+    "description": "Providing food packs and clean water to affected areas. We have a large inventory of food supplies, bottled water, and hygiene kits, which we are distributing to shelters and community centers across the region. Our teams are ready to deploy at a moment's notice."
+  },
+  {
+    "id": 6,
+    "name": "HealthCare Group",
+    "donor_type": "NGO",
+    "donation_category": "Medical",
+    "capacity": 15,
+    "location": {
+      "latitude": 34.0536909,
+      "longitude": -118.242766
+    },
+    "city": "Los Angeles",
+    "description": "Offering comprehensive medical assistance including first aid kits, mobile clinics, and on-site medical professionals. Our services are designed to provide immediate and long-term support for those injured or in need of medical care."
+  },
+  {
+    "id": 7,
+    "name": "Greg Theodon",
+    "donor_type": "Individual",
+    "donation_category": "Housing",
+    "capacity": 3,
+    "location": {
+      "latitude": 37.7792588,
+      "longitude": -122.4193286
+    },
+    "city": "San Francisco",
+    "description": "Can provide temporary shelter for a small family. The shelter is a recently renovated structure equipped with basic amenities and can accommodate families in distress."
+  },
+  {
+    "id": 8,
+    "name": "Food for Everyone",
+    "donor_type": "NGO",
+    "donation_category": "Supplies",
+    "capacity": 30,
+    "location": {
+      "latitude": 36.7014631,
+      "longitude": -118.755997
+    },
+    "description": "Delivering essential food and water supplies including perishable and non-perishable foods. We work with local partners to ensure that aid reaches the most vulnerable communities promptly."
+  },
+  {
+    "id": 8,
+    "name": "",
+    "donor_type": "Individual",
+    "donation_category": "Food",
+    "capacity": 5,
+    "city": "Dollard-Des Ormeaux",
+    "description": ""
+  },
+  {
+    "id": 9,
+    "name": "Jim Green",
+    "donor_type": "Individual",
+    "donation_category": "Shelter",
+    "capacity": 2,
+    "city": "Dollard-Des Ormeaux",
+    "location": {
+      "latitude": 45.48423,
+      "longitude": -73.8064547
+    },
+    "description": "I am living in the greater San Francisco area and I have 2 bedrooms that I can share with two people over the following weeks while you resettle. It is a 3 bedroom house with 1 shared bathroom and you will have to pay for food. No other payments are necessary. "
+  }
+]

@@ -8,7 +8,11 @@ export default function Map() {
   const [donors, setDonors] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/donors')
+    fetch('http://localhost:5000/api/get_top_donors', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ victim_text: "Need urgent help", victim_location: { latitude: 40.7128, longitude: -74.0060 } })
+    })
       .then(response => response.json())
       .then(data => {
         setDonors(data);

@@ -1,7 +1,10 @@
+import os
 from transformers import pipeline
 
+model_path = os.path.join(os.path.dirname(__file__), 'intent_model')
+
 # Load your fine-tuned intent classifier
-intent_classifier = pipeline("text-classification", model=r"src\ai_models\scripts\intent_model", tokenizer=r"src\ai_models\scripts\intent_model")
+intent_classifier = pipeline("text-classification", model=model_path)
 
 def predict_intent(text):
     """
