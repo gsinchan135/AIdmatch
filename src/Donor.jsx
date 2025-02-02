@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./styling/Donor.css";
+import axios from 'axios';
 
 
 export default function Donor() {
@@ -16,6 +17,29 @@ export default function Donor() {
   const phoneNumberRef = useRef(null);
   const capacityRef = useRef(null);
   const descRef = useRef(null);
+
+  const getCoordinates = async (address) => {
+    try {
+      const NOMINATIM_BASE_URL = 'https://nominatim.openstreetmap.org/search';
+      // @ts-ignore
+      const params = new URLSearchParams({
+        q: address,
+        format: 'json',
+        limit: 1,
+      });
+  
+      const response = await axios.get(`${NOMINATIM_BASE_URL}?${params}`);
+      if (response.data.length > 0) {
+        return {
+          lat: parseFloat(response.data[0].lat),
+          lon: parseFloat(response.data[0].lon),
+        };
+      }
+    } catch (error) {
+      console.error('Error fetching coordinates:', error);
+    }
+    return null;
+  };
 
   const handleContainerClick = (ref) => {
     ref.current?.focus();

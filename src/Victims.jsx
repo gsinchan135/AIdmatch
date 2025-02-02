@@ -26,6 +26,7 @@ const Victims = () => {
   return (
     <div className="victims-container">
       <h1>Help</h1>
+      <textarea id='victim-situation'></textarea>
       <table className="donor-table">
         <thead>
           <tr>

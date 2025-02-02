@@ -1,80 +1,88 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-// @ts-ignore
-// @ts-ignore
 import axios from 'axios';
-import 'leaflet/dist/leaflet.css'; 
-import './styling/Donor.css'; 
+import 'leaflet/dist/leaflet.css';
+import './styling/Donor.css';
 
-// Function to generate random coordinates within a specified radius
-function generateRandomCoordinates(centerLat, centerLon, radiusKm) {
-  const radiusInDegrees = radiusKm / 111.32;
+// Function to get geolocation from address using Nominatim
+const getCoordinates = async (address) => {
+  try {
+    const NOMINATIM_BASE_URL = 'https://nominatim.openstreetmap.org/search';
+    // @ts-ignore
+    const params = new URLSearchParams({
+      q: address,
+      format: 'json',
+      limit: 1,
+    });
 
-  const randomLat = centerLat + (Math.random() - 0.5) * 2 * radiusInDegrees;
-  const randomLon = centerLon + (Math.random() - 0.5) * 2 * radiusInDegrees / Math.cos(centerLat * Math.PI / 180);
-
-  return {
-    lat: randomLat,
-    lon: randomLon
-  };
-}
-
-const LAlat = 34.0522;
-const LAlon = -118.2437;  
+    const response = await axios.get(`${NOMINATIM_BASE_URL}?${params}`);
+    if (response.data.length > 0) {
+      return {
+        lat: parseFloat(response.data[0].lat),
+        lon: parseFloat(response.data[0].lon),
+      };
+    }
+  } catch (error) {
+    console.error('Error fetching coordinates:', error);
+  }
+  return null;
+};
 
 export default function Map() {
   const [donors, setDonors] = useState([]);
-  const [coordinates, setCoordinates] = useState([]);  // Store coordinates for each donor
+  const [coordinates, setCoordinates] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/donors')  
+    fetch('http://localhost:3001/donors')
       .then(response => response.json())
-      .then((data) => {
+      .then(async (data) => {
         setDonors(data);
 
-        // Generate random coordinates for each donor
-        const randomCoordinates = data.map(() => generateRandomCoordinates(LAlat, LAlon, 50));
-        setCoordinates(randomCoordinates);
+        // Fetch coordinates for each donor
+        const locations = await Promise.all(
+          data.map(async (donor) => {
+            return getCoordinates(donor.address);
+          })
+        );
+
+        // @ts-ignore
+        setCoordinates(locations.filter(Boolean)); // Remove null values
       })
-      .catch(error => console.error("Error fetching donors:", error));
+      .catch(error => console.error('Error fetching donors:', error));
   }, []);
 
   return (
-    <MapContainer center={[34.054, -118.24]} zoom={12} style={{ height: "500px", width: "100%" }}>
+    <MapContainer center={[34.054, -118.24]} zoom={12} style={{ height: '500px', width: '100%' }}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      
+
       {donors.map((donor, index) => {
         const coord = coordinates[index];
 
-        if (!coord) return null; // Skip rendering if no coordinates are available
+        if (!coord) return null;
 
         return (
-          <Marker 
-            key={index} 
-            position={[coord.lat, coord.lon]} 
+          <Marker
+            key={index}
+            position={[coord.lat, coord.lon]}
             icon={L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png' })}
           >
             <Popup>
               <strong>{donor.
-            // @ts-ignore
+// @ts-ignore
               name}</strong><br />
               <strong>{donor.
-            // @ts-ignore
-            location}</strong>
-              <br />
-              <br/>
+// @ts-ignore
+              address}</strong><br /><br />
               Phone: {donor.
-            // @ts-ignore
+// @ts-ignore
               phoneNumber}<br />
               Capacity: {donor.
 // @ts-ignore
-              capacity}
-              <br/>
+              capacity}<br />
               {donor.
-            // @ts-ignore
+// @ts-ignore
               description}
-              <br />
             </Popup>
           </Marker>
         );
